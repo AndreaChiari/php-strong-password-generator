@@ -1,15 +1,10 @@
 <?php
-$pswlength = $_GET['pswlength']
+$pswlength = $_GET['pswlength'] ?? '';
 
 // creo una funzione che mi vada a generare una password randomica in base al valore di input che l'utente inserisce nel form
 
-function password_generate($chars) 
-    {
-    $data = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz';
-    return substr(str_shuffle($data), 0, $chars);
-    }
-
-echo password_generate(9)
+include './data/includes.php';
+$userpsw = password_generate($pswlength)
 ?>
 
 
@@ -31,7 +26,7 @@ echo password_generate(9)
             </div>
             <div class="col-auto">
                 <label for="inputPassword2" class="visually-hidden"></label>
-                <input type="password" class="form-control" id="inputPassword2" placeholder="lunghezza pasword" name="pswlength">
+                <input type="password" class="form-control" id="inputPassword2" placeholder="lunghezza pasword" name="pswlength" value="<?= $userpsw ?>">
             </div>
             <div class="col-auto">
                 <button type="submit" class="btn btn-primary mb-3">Genera password</button>
