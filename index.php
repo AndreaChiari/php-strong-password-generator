@@ -8,9 +8,11 @@ function password_generate($chars)
 {
     $data = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz#@$%!?';
     return substr(str_shuffle($data), 0, $chars);
+    var_dump($chars);
 }
 
-$userpsw = password_generate($pswlength);
+echo "ciao";
+$userpsw = password_generate(6);
 
 
 //redireziono l'utente in un'altra pagina per mostrargli la password
@@ -39,8 +41,7 @@ $userpsw = password_generate($pswlength);
             </div>
             <div class="col-auto">
                 <label for="inputPassword2" class="visually-hidden"></label>
-                <input type="input" class="form-control" id="inputPassword2" placeholder="lunghezza pasword" name="pswlength" value="">
-
+                <input type="input" class="form-control" id="inputPassword2" placeholder="lunghezza pasword" name="pswlength" value="<?= $userpsw ?>">
             </div>
             <p><?= $userpsw ?></p>
             <div class="col-auto">
