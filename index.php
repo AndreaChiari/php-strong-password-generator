@@ -39,7 +39,7 @@ $userpsw = password_generate($pswlength);
             </div>
             <div class="col-auto">
                 <label for="inputPassword2" class="visually-hidden"></label>
-                <input type="input" class="form-control" id="inputPassword2" placeholder="lunghezza pasword" name="pswlength">
+                <input type="input" class="form-control" id="inputPassword2" placeholder="lunghezza pasword" name="pswlength" value="">
 
             </div>
             <p><?= $userpsw ?></p>
